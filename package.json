@@ -1,0 +1,15 @@
+{
+  "name": "enterprise-inbox-intelligence-platform",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Monorepo tooling for the Enterprise Inbox Intelligence Platform",
+  "scripts": {
+    "ci:frontend": "echo \"TODO: frontend CI pipeline\"",
+    "ci:backend": "echo \"TODO: backend CI pipeline\"",
+    "commitlint": "commitlint --from=HEAD~1 --to=HEAD"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0"
+  }
+}
