@@ -61,7 +61,7 @@ Bash:
 
 ```bash
 cd backend
-gradle bootRun
+./gradlew bootRun
 ```
 
 Default backend URL: `http://localhost:8080`

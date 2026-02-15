@@ -1,0 +1,12 @@
+#!/bin/sh
+
+DIRNAME=$(cd "$(dirname "$0")" && pwd)
+CLASSPATH="$DIRNAME/gradle/wrapper/gradle-wrapper-main-8.12.1.jar:$DIRNAME/gradle/wrapper/gradle-wrapper-shared-8.12.1.jar"
+
+if [ -n "$JAVA_HOME" ] ; then
+  JAVACMD="$JAVA_HOME/bin/java"
+else
+  JAVACMD="java"
+fi
+
+exec "$JAVACMD" -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"

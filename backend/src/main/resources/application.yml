@@ -32,6 +32,13 @@ management:
     health:
       show-details: always
 
+app:
+  security:
+    jwt:
+      secret: localdev-secret-key-that-is-at-least-32-bytes-long
+      expiration-seconds: 3600
+      issuer: enterprise-inbox-backend
+
 ---
 spring:
   config:
@@ -41,4 +48,5 @@ spring:
     url: jdbc:postgresql://localhost:5432/inbox
     username: inbox
     password: inbox
+
 

@@ -11,6 +11,10 @@ frontend/dist/
 # Backend
 backend/target/
 backend/.mvn/wrapper/maven-wrapper.jar
+backend/.tools/
+
+# Local tool caches
+.tools/
 
 # Env
 .env

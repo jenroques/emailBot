@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -40,6 +41,11 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(DomainException.class)
     public ProblemDetail handleDomainException(DomainException ex, HttpServletRequest request) {
         return baseProblem(ex.getStatus(), ex.getMessage(), ex.getCode(), request);
+    }
+
+    @ExceptionHandler(BadCredentialsException.class)
+    public ProblemDetail handleBadCredentials(BadCredentialsException ex, HttpServletRequest request) {
+        return baseProblem(HttpStatus.UNAUTHORIZED, "Invalid username or password", "auth_failed", request);
     }
 
     @ExceptionHandler(Exception.class)
