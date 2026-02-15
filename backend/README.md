@@ -5,7 +5,13 @@ Spring Boot 3 / Java 17 backend service for the Enterprise Inbox Intelligence Pl
 ## Run Locally
 
 ```bash
-mvn spring-boot:run
+gradle bootRun
+```
+
+Active profile for local development:
+
+```bash
+gradle bootRun --args='--spring.profiles.active=localdev'
 ```
 
 Health endpoint:

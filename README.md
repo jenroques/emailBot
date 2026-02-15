@@ -61,7 +61,7 @@ Bash:
 
 ```bash
 cd backend
-mvn spring-boot:run
+gradle bootRun
 ```
 
 Default backend URL: `http://localhost:8080`

@@ -5,14 +5,40 @@ spring:
     url: jdbc:postgresql://localhost:5432/inbox
     username: inbox
     password: inbox
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
     open-in-view: false
-  data:
-    redis:
-      host: localhost
-      port: 6379
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  mvc:
+    problemdetails:
+      enabled: true
 
 server:
   port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+---
+spring:
+  config:
+    activate:
+      on-profile: localdev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/inbox
+    username: inbox
+    password: inbox
+
